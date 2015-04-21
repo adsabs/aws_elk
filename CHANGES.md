@@ -2,6 +2,12 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9] - 2015-04-21
+### Changed
+Modified the logtash grok pattern for the API
+Modified the logstash user data to copy the pattern folder from S3 storage
+Added a patterns/ folder
+
 ## [0.9] - 2015-04-20
 ### Changed
 Uploaded key and crt files had the wrong CommonName and have been updated to have
