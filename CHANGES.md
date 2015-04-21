@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.9] - 2015-04-21
 ### Changed
+Modified logstash-forwarder config file so that all log files in /tmp/ get forwarded to logstash
+
+## [0.9] - 2015-04-21
+### Changed
 Modified the logtash grok pattern for the API
 Modified the logstash user data to copy the pattern folder from S3 storage
 Added a patterns/ folder
