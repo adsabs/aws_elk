@@ -32,5 +32,5 @@ aws s3 cp s3://adsabs-elk-etc/logstash-forwarder.crt logstash-forwarder.crt
 popd
 
 # Run the container
-docker run -d --hostname logstash-forwarder --name logstash-forwarder -v /etc/logstash/conf.d/logstash-forwarder.conf:/etc/logstash/conf.d/logstash-forwarder.conf -v /tmp/logs/:/tmp/logs/ -v /etc/pki/tls/certs/logstash-forwarder/:/etc/pki/tls/certs/logstash-forwarder/ -v /etc/pki/tls/private/logstash-forwarder/:/etc/pki/tls/private/logstash-forwarder/ adsabs/logstash-forwarder
+docker run -d --hostname logstash-forwarder --name logstash-forwarder -v /etc/logstash/conf.d/logstash-forwarder.conf:/etc/logstash/conf.d/logstash-forwarder.conf -v /tmp/:/tmp/ -v /etc/pki/tls/certs/logstash-forwarder/:/etc/pki/tls/certs/logstash-forwarder/ -v /etc/pki/tls/private/logstash-forwarder/:/etc/pki/tls/private/logstash-forwarder/ adsabs/logstash-forwarder
 popd
