@@ -15,8 +15,12 @@ docker build --tag adsabs/logstash Dockerfiles/logstash/
 
 # Copy the recent logstash configuration file
 mkdir -p /etc/logstash/conf.d/
+mkdir -p /etc/logstash/conf.d/patterns/
 pushd /etc/logstash/conf.d/
 aws s3 cp s3://adsabs-elk-etc/logstash.conf logstash.conf
+popd
+pushd /etc/logstash/conf.d/patterns/
+aws s3 cp s3://adsabs-elk-etc/patterns/ . --recursive
 popd
 
 # Copy the recent cert/key for SSL to succeed

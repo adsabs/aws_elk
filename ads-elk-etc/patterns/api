@@ -1,0 +1,6 @@
+API_VERSION v[0-9]
+MANY_WORDS \w+
+SERVICE %{MANY_WORDS}
+END_POINT %{MANY_WORDS}
+QUERY \S+
+API_URL \/%{API_VERSION:api_version}\/%{SERVICE:service}\/%{END_POINT:end_point}\?%{QUERY:query}
