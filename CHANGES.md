@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 Updated mount of /tmp/logs/ to /tmp/
 Updated mount of logstash-forwarder.conf to just conf.d/
 Fixed a spelling mistake of logstash-forwarder, 'forwader', derp!
+Added S3 plugin definitions to logstash configuration
 
 ## [0.9] - 2015-04-21
 ### Changed
