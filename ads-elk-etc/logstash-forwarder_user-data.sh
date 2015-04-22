@@ -17,7 +17,7 @@ docker build --tag adsabs/logstash-forwarder Dockerfiles/logstash-forwarder/
 # Copy the recent logstash configuration file
 mkdir -p /etc/logstash/conf.d/
 pushd /etc/logstash/conf.d/
-aws s3 cp s3://adsabs-elk-etc/logstash-forwader.conf logstash-forwarder.conf
+aws s3 cp s3://adsabs-elk-etc/logstash-forwarder.conf logstash-forwarder.conf
 popd
 
 # Copy the recent cert/key for SSL to succeed
@@ -32,5 +32,5 @@ aws s3 cp s3://adsabs-elk-etc/logstash-forwarder.crt logstash-forwarder.crt
 popd
 
 # Run the container
-docker run -d --hostname logstash-forwarder --name logstash-forwarder -v /etc/logstash/conf.d/logstash-forwarder.conf:/etc/logstash/conf.d/logstash-forwarder.conf -v /tmp/:/tmp/ -v /etc/pki/tls/certs/logstash-forwarder/:/etc/pki/tls/certs/logstash-forwarder/ -v /etc/pki/tls/private/logstash-forwarder/:/etc/pki/tls/private/logstash-forwarder/ adsabs/logstash-forwarder
+docker run -d --hostname logstash-forwarder --name logstash-forwarder -v /etc/logstash/conf.d/:/etc/logstash/conf.d/ -v /tmp/:/tmp/ -v /etc/pki/tls/certs/logstash-forwarder/:/etc/pki/tls/certs/logstash-forwarder/ -v /etc/pki/tls/private/logstash-forwarder/:/etc/pki/tls/private/logstash-forwarder/ adsabs/logstash-forwarder
 popd

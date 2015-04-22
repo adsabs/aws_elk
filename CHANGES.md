@@ -2,6 +2,12 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9] - 2015-04-22
+### Changed
+Updated mount of /tmp/logs/ to /tmp/
+Updated mount of logstash-forwarder.conf to just conf.d/
+Fixed a spelling mistake of logstash-forwarder, 'forwader', derp!
+
 ## [0.9] - 2015-04-21
 ### Changed
 Modified logstash-forwarder config file so that all log files in /tmp/ get forwarded to logstash
