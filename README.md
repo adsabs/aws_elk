@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/adsabs/aws_elk.png?label=ready&title=Ready)](https://waffle.io/adsabs/aws_elk)
 # AWS Elasticsearch/Logstash/Kibana stack for centralised logging of the ADSAWS
 
 # Setup
