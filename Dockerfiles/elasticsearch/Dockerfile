@@ -22,9 +22,9 @@ RUN apt-get install -y elasticsearch openjdk-7-jdk
 
 # Plugins for elasticsearch
 #WORKDIR /usr/share/elasticsearch
-RUN /usr/share/elasticsearch/bin/plugin -i lmenezes/elasticsearch-kopf
-RUN /usr/share/elasticsearch/bin/plugin -i mobz/elasticsearch-head
-RUN /usr/share/elasticsearch/bin/plugin -i elasticsearch/marvel/latest
+#RUN /usr/share/elasticsearch/bin/plugin -i lmenezes/elasticsearch-kopf
+#RUN /usr/share/elasticsearch/bin/plugin -i mobz/elasticsearch-head
+#RUN /usr/share/elasticsearch/bin/plugin -i elasticsearch/marvel/latest
 
 # Define the entry point for docker<->logstash
 ## Elasticsearch HTTP and communication
