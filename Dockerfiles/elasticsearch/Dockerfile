@@ -30,6 +30,8 @@ RUN apt-get install -y elasticsearch openjdk-7-jdk
 ## Elasticsearch HTTP and communication
 EXPOSE 9200 9300
 
+# Add an environment variable for the JVM heapsize
+ENV ES_HEAP_SIZE 1g
 
 # How the docker container is interacted with
 ##
