@@ -2,6 +2,10 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9] - 2015-05-19
+### Changed
+User data of logstash to redirect logs to syslog
+
 ## [0.9] - 2015-04-22
 ### Changed
 Updated mount of /tmp/logs/ to /tmp/

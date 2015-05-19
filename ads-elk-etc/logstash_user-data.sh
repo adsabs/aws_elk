@@ -20,7 +20,7 @@ pushd /etc/logstash/conf.d/
 aws s3 cp s3://adsabs-elk-etc/logstash.conf logstash.conf
 popd
 pushd /etc/logstash/conf.d/patterns/
-aws s3 cp s3://adsabs-elk-etc/patterns/ . --recursive
+aws s3 cp s3://adsabs-elk-etc/patterns/api api
 popd
 
 # Copy the recent cert/key for SSL to succeed
@@ -35,5 +35,5 @@ aws s3 cp s3://adsabs-elk-etc/logstash-forwarder.crt logstash-forwarder.crt
 popd
 
 # Run the container
-docker run -d --hostname logstash --name logstash -v /etc/logstash/conf.d/:/etc/logstash/conf.d/ -v /etc/pki/tls/certs/logstash-forwarder/:/etc/pki/tls/certs/logstash-forwarder/ -v /etc/pki/tls/private/logstash-forwarder/:/etc/pki/tls/private/logstash-forwarder/ -p 6767:6767 adsabs/logstash
+docker run -d --hostname logstash --name logstash -v /etc/logstash/conf.d/:/etc/logstash/conf.d/ -v /etc/pki/tls/certs/logstash-forwarder/:/etc/pki/tls/certs/logstash-forwarder/ -v /etc/pki/tls/private/logstash-forwarder/:/etc/pki/tls/private/logstash-forwarder/ -p 6767:6767 --log-driver syslog adsabs/logstash
 popd
