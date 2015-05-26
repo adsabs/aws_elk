@@ -2,6 +2,18 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.8] - 2015-05-26
+### Added
+`solr` grok pattern added in patterns/solr
+
+### Changed
+`logstash.conf` updated to differentiate between tags
+`logstash_user-data.sh` updated to include the new `solr` pattern
+`logstash-forwarder.conf` updated to include a tag when sending logs
+`logtsash-forwarder_user-data.sh` updated to allow the user to define the tag
+to be placed within logstash-forwarder on deployment. If the user passes nothing
+it will default to apache style parsing of the logs.
+
 ## [0.9.7] - 2015-05-19
 ### Changed
 logstash.conf - S3 output will not work unless you specify that it is in json
