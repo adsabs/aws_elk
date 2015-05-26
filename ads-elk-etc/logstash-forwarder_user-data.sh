@@ -1,6 +1,14 @@
 #!/bin/bash
 # Run as root
 
+# User defined TAG for logstash/logstash-forwarder
+if [ -z "$1" ]
+  then
+    TAG="DEFAULT"
+else
+  TAG=$1
+fi
+
 # Install docker and git
 yum install docker git -y
 
@@ -18,6 +26,10 @@ docker build --tag adsabs/logstash-forwarder Dockerfiles/logstash-forwarder/
 mkdir -p /etc/logstash/conf.d/
 pushd /etc/logstash/conf.d/
 aws s3 cp s3://adsabs-elk-etc/logstash-forwarder.conf logstash-forwarder.conf
+
+# Replace the tag with a user tag
+sed -i 's@REPLACE_TAG@'$TAG'@' logstash-forwarder.conf
+
 popd
 
 # Copy the recent cert/key for SSL to succeed

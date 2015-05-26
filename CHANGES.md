@@ -2,39 +2,62 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.9] - 2015-05-19
+## [0.9.8] - 2015-05-26
+### Added
+`solr` grok pattern added in patterns/solr
+
 ### Changed
+`logstash.conf` updated to differentiate between tags
+`logstash_user-data.sh` updated to include the new `solr` pattern
+`logstash-forwarder.conf` updated to include a tag when sending logs
+`logtsash-forwarder_user-data.sh` updated to allow the user to define the tag
+to be placed within logstash-forwarder on deployment. If the user passes nothing
+it will default to apache style parsing of the logs.
 User data of logstash to redirect logs to syslog
 
-## [0.9] - 2015-04-22
+## [0.9.7] - 2015-05-19
+### Changed
+logstash.conf - S3 output will not work unless you specify that it is in json
+format. This is an old bug, meant to be 'fixed', but seemingly still is there.
+
+Specifically copy the file 'api', rather than recursively copy the patterns. I
+chose this because the file was missing, but it will be more explicit to know
+which patterns are being copied over, unless the number gets much larger.
+
+Turned of stdout from rubydebug as it spams the containers disk.
+
+Re-directed the logs from logstash to syslog.
+
+## [0.9.6] - 2015-04-22
+>>>>>>> develop
 ### Changed
 Updated mount of /tmp/logs/ to /tmp/
 Updated mount of logstash-forwarder.conf to just conf.d/
 Fixed a spelling mistake of logstash-forwarder, 'forwader', derp!
 Added S3 plugin definitions to logstash configuration
 
-## [0.9] - 2015-04-21
+## [0.9.5] - 2015-04-21
 ### Changed
 Modified logstash-forwarder config file so that all log files in /tmp/ get forwarded to logstash
 
-## [0.9] - 2015-04-21
+## [0.9.4] - 2015-04-21
 ### Changed
 Modified the logtash grok pattern for the API
 Modified the logstash user data to copy the pattern folder from S3 storage
 Added a patterns/ folder
 
-## [0.9] - 2015-04-20
+## [0.9.3] - 2015-04-20
 ### Changed
 Uploaded key and crt files had the wrong CommonName and have been updated to have
 the correct one.
 
-## [0.9] - 2015-04-20
+## [0.9.2] - 2015-04-20
 ### Changed
 Forgot to add the .crt and .key files for logstash. They are now uploaded and
 added to the repo. Given logstash, etc., are inside the VPN, it does not matter
 that these keys are public
 
-## [0.9] - 2015-04-20
+## [0.9.1] - 2015-04-20
 ### Changed
 - config files changed to use the new repository aws_elk maintained on the
 ADS repository
