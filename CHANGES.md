@@ -2,6 +2,16 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.9] - 2015-07-07
+### Added
+`elasticsearch/resources/runscript.sh` - this runs curator
+`elasticsearch/resources/cronjob.sh` - the crontab to be added that runs curator daily
+
+### Changed
+The Dockerfile for elasticsearch was modified such that it now installs the
+elsaticsearch curator. This is to be run once a day, and deletes any index that
+is older than 31 days.
+
 ## [0.9.8] - 2015-05-26
 ### Added
 `solr` grok pattern added in patterns/solr
