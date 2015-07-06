@@ -3,7 +3,7 @@
 # Elasticsearch will listen on port 9200 for web traffic:
 
 # OS to use
-FROM ubuntu:latest
+FROM ubuntu:trusty
 MAINTAINER Jonny Eliott <jonathan.elliott@cfa.havard.edu>
 
 
@@ -15,10 +15,17 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu --recv D88E42B4
 RUN echo 'deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main' > /etc/apt/sources.list.d/elasticsearch.list
 
 ## Update the apt-get source list
-RUN apt-get update
+RUN apt-get update -y
 
 ## Install dependencies
-RUN apt-get install -y elasticsearch openjdk-7-jdk
+RUN apt-get install -y elasticsearch openjdk-7-jdk python-pip
+
+## Install curator for elasticsearch
+RUN pip install elasticsearch-curator
+COPY resources/runscript.sh /runscript.sh
+COPY resources/cronjob.sh /cronjob.sh
+RUN crontab /cronjob.sh
+RUN chmod 777 /runscript.sh
 
 # Plugins for elasticsearch
 #WORKDIR /usr/share/elasticsearch
