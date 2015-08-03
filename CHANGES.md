@@ -2,6 +2,13 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.10] - 2015-07-27
+### Changed
+Updated the logstash certs to be for CNAMEs related to Amazon Route 53. This
+makes the SSL certs no longer contain semi-"sensitive" information.
+
+Updated the config file to use Route 53 address and not the actual ip.
+
 ## [0.9.9] - 2015-07-07
 ### Added
 `elasticsearch/resources/runscript.sh` - this runs curator
