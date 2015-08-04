@@ -2,6 +2,12 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.11] - 2015-08-04
+### Changed
+Logstash has been moves into a Docker container that is now hosted on our
+DockerHub account. As such, no building information is required in the S3 storage
+in regards to the user-data.sh.
+
 ## [0.9.10] - 2015-07-27
 ### Changed
 Updated the logstash certs to be for CNAMEs related to Amazon Route 53. This
