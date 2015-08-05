@@ -2,6 +2,11 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.12] - 2015-08-05
+### Changed
+Upgraded the elastickibana user data so that the docker containers for elasticsearch
+and kibana from the DockerHub registry, rather than building it no the machine.
+
 ## [0.9.11] - 2015-08-04
 ### Changed
 Logstash has been moves into a Docker container that is now hosted on our
