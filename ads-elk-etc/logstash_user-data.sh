@@ -7,4 +7,4 @@ yum install docker -y
 service docker start
 
 # Run the container
-docker run -d --hostname logstash --name logstash -p 6767:6767 --restart=always --log-driver syslog adsabs/logstash:a91799f291277549b16159ea87bfff3364553aab
+docker run -d --hostname logstash --name logstash -p 6767:6767 --restart=always --log-driver syslog adsabs/logstash:e51a8b4e7d61e2d88f5669fc524a9586a3630091
