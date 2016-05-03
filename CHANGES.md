@@ -2,6 +2,11 @@
 All notable changes to the config fileswill be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.13] - 2016-05-03
+### Changed
+Elasticsearch had wrong version in docker run
+Logstash now ignores Elastichealth check messages
+
 ## [0.9.12] - 2015-08-05
 ### Changed
 Upgraded the elastickibana user data so that the docker containers for elasticsearch

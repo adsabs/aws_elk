@@ -8,7 +8,7 @@ service docker start
 
 # Run the containers
 ## First start elasticsearch
-docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 adsabs/elasticsearch:d7cd21774e7a5c62c82af77871b2f3fec31f9506
+docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 adsabs/elasticsearch:v1.0.1
 
 ## Second start kibana
 ## Kibana should wait for elasticsearch to be ready, otherwise it will crash
